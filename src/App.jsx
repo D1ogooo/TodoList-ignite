@@ -8,6 +8,11 @@ import RadioImage from './components/RadioImage'
 
 function App() {
   const [listaDeMarcadores, setListaDeMarcadores] = useState([])
+  const [checked, setChecked] = useState(false)
+  const [table, setTable] = useState(0)
+  const handleTable = (prevState) => {
+    setTable(prevState)
+  }
 
   return (
     <>
@@ -16,13 +21,12 @@ function App() {
           <img src={RocketImage} />
           <h1>to<span>do</span></h1>
         </Title>
-        <Search setListaDeMarcadores={setListaDeMarcadores} />
+        <Search setListaDeMarcadores={setListaDeMarcadores} onTableChange={handleTable}/>
       </TopContainer>
 
       <PaiContainer>
-
         <Tarefas>
-          <h2>Tarefas criadas <span>0</span></h2>
+          <h2>Tarefas criadas <span>{table}</span></h2>
           <h3>Concluídas <span>0</span> </h3>
         </Tarefas>
         {listaDeMarcadores.length ? (
@@ -30,7 +34,7 @@ function App() {
             <>
               <Array key={index}>
                 <Nova>
-                  <RadioImage />
+                  <RadioImage checked={checked}/>
                   <p>{lista.texto}</p>
                   <img src={LixeiraImage} id="lixeira_img" />
                 </Nova>

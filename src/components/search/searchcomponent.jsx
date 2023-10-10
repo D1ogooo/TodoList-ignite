@@ -1,13 +1,16 @@
 import SumIcon from '../../assets/plus.svg'
 import { PaiContainer, CreateButton, FindContainer } from './searchstyle'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
-export function Search({ setListaDeMarcadores }) {
+export function Search({ setListaDeMarcadores, onTableChange }) {
+  const [tabelas, setTabelas] = useState(0)
   let InputTarefa = useRef(null)
 
   const handleSubmit = () => {
     if (InputTarefa.current) {
+     setTabelas(() => tabelas+1)
 
+     console.log(tabelas)
       let NovaTarefa = {
        texto: `${InputTarefa.current.value}`,
        done: false,
@@ -15,6 +18,7 @@ export function Search({ setListaDeMarcadores }) {
       
       if (InputTarefa.current.value.length > 0) {
         setListaDeMarcadores((prevState) => [...prevState, NovaTarefa])
+        onTableChange(prevState => prevState + 1)
       }
     }
   }

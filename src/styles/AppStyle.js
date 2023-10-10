@@ -159,23 +159,6 @@ export const Array = styled.div`
  }
 `
 
-// export const Radio_img = styled.img.attrs(({checked}) => ({
-//   src: checked ? RadioImageChecked : RadioImage,
-// }))`
-//  width: 24px;
-//  height: 24px;
-//  cursor: pointer;
-
-//  &.checked {
- 
-//  }
- /*
- margin-left: 1rem;
- margin-top: 10px;
- */
-
-// `;
-
 export const Nova = styled.div`
  display: flex; 
  align-items: center;
@@ -189,6 +172,7 @@ export const Nova = styled.div`
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 140%;
+  line-height: 140%; /*line-through*/
+  text-decoration: ${(props) => props.checked ? line-through : null};
  }
 `

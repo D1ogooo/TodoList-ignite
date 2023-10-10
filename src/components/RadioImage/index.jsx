@@ -3,7 +3,7 @@ import RadioImageChecked from '../../assets/radios cheio 2.svg'
 import { ImageCustom } from './RadioStyle'
 import { useState } from 'react'
 
-function RadioImage() {
+function RadioImage({ checked }) {
  const [radio, setRadio] = useState(false)
 
  function changeIcon () {
