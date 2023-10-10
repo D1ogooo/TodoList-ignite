@@ -129,7 +129,44 @@ export const Tarefas = styled.div`
  `
 
 export const Array = styled.div`
- display: flex;
- justify-content: center;
+ align-items: start;
+ margin: 0 auto;
+ width: 764px;
+ height: 72px;
+ border-radius: 8px;
+ border: 1px solid var(--Gray-400, #333);
+ background: var(--Gray-500, #262626);
+ box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
  
+ p {
+  // margin-left: 12px;
+  // margin-top: 10px;
+  text-align: left;
+ }
+
+ #radio_img {
+ width: 24px;
+ height: 24px;
+ cursor: pointer;
+ margin-left: 1rem;
+ margin-top: 10px;
+ }
+
+ #lixeira_img {
+ width: 24px;
+ height: 24px;
+ cursor: pointer;
+ text-align: left;
+ }
+`
+
+export const Nova = styled.div`
+ height: 100%;
+ display: flex; 
+ align-itens: center;
+ justify-content: space-between;
+ p {
+  padding-top: 16px;
+  
+ }
 `

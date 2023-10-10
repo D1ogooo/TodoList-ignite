@@ -9,8 +9,8 @@ export function Search({ setListaDeMarcadores }) {
     if (InputTarefa.current) {
 
       let NovaTarefa = {
-        texto: `${InputTarefa.current.value}`,
-        done: false,
+       texto: `${InputTarefa.current.value}`,
+       done: false,
       }
 
       setListaDeMarcadores((prevState) => [...prevState, NovaTarefa])
@@ -21,7 +21,7 @@ export function Search({ setListaDeMarcadores }) {
     <>
       <PaiContainer>
         <FindContainer>
-          <input type="text" placeholder='Adicione uma nova tarefa' ref={InputTarefa} />
+         <input type="text" placeholder='Adicione uma nova tarefa' ref={InputTarefa} />
         </FindContainer>
         <CreateButton onClick={handleSubmit}>Criar <img src={SumIcon} /></CreateButton>
       </PaiContainer>
