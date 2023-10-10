@@ -12,8 +12,10 @@ export function Search({ setListaDeMarcadores }) {
        texto: `${InputTarefa.current.value}`,
        done: false,
       }
-
-      setListaDeMarcadores((prevState) => [...prevState, NovaTarefa])
+      
+      if (InputTarefa.current.value.length > 0) {
+        setListaDeMarcadores((prevState) => [...prevState, NovaTarefa])
+      }
     }
   }
 

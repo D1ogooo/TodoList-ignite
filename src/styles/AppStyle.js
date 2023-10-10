@@ -48,7 +48,6 @@ export const Title = styled.div`
  }
 `
 
-
 export const MainContainer = styled.div`
  display: flex;
  justify-content: center;
@@ -94,8 +93,8 @@ export const Tarefas = styled.div`
   display: flex;
   justify-content: center;
   gap: 33.5rem;
-  margin-top: 20rem;
   margin-bottom: 1.5rem;
+  margin-top: 20rem;
  
   h2 {
    color: #4EA8DE;
@@ -129,8 +128,10 @@ export const Tarefas = styled.div`
  `
 
 export const Array = styled.div`
+ /* margin-top: 20rem; */
  align-items: start;
  margin: 0 auto;
+ margin-top: 1rem;
  width: 764px;
  height: 72px;
  border-radius: 8px;
@@ -144,29 +145,50 @@ export const Array = styled.div`
   text-align: left;
  }
 
- #radio_img {
- width: 24px;
- height: 24px;
- cursor: pointer;
- margin-left: 1rem;
- margin-top: 10px;
- }
-
  #lixeira_img {
  width: 24px;
  height: 24px;
  cursor: pointer;
  text-align: left;
  }
+
+ #Radio_img{
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+ }
 `
 
+// export const Radio_img = styled.img.attrs(({checked}) => ({
+//   src: checked ? RadioImageChecked : RadioImage,
+// }))`
+//  width: 24px;
+//  height: 24px;
+//  cursor: pointer;
+
+//  &.checked {
+ 
+//  }
+ /*
+ margin-left: 1rem;
+ margin-top: 10px;
+ */
+
+// `;
+
 export const Nova = styled.div`
- height: 100%;
  display: flex; 
- align-itens: center;
+ align-items: center;
  justify-content: space-between;
+ margin: 16px;
+
  p {
-  padding-top: 16px;
-  
+  margin-left: 30px;
+  color: #F2F2F2;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
  }
 `
