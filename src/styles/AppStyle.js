@@ -138,12 +138,6 @@ export const Array = styled.div`
  border: 1px solid var(--Gray-400, #333);
  background: var(--Gray-500, #262626);
  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
- 
- p {
-  // margin-left: 12px;
-  // margin-top: 10px;
-  text-align: left;
- }
 
  #lixeira_img {
  width: 24px;
@@ -172,7 +166,10 @@ export const Nova = styled.div`
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 140%; /*line-through*/
-  text-decoration: ${(props) => props.checked ? line-through : null};
+  line-height: 140%;
+ }
+
+ .checked {
+  text-decoration: line-through;
  }
 `

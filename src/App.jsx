@@ -7,12 +7,29 @@ import { useState } from 'react'
 import RadioImage from './components/RadioImage'
 
 function App() {
+  const [itens, setItens] = useState([])
+  const [radio, setRadio] = useState(false)
   const [listaDeMarcadores, setListaDeMarcadores] = useState([])
-  const [checked, setChecked] = useState(false)
   const [table, setTable] = useState(0)
   const handleTable = (prevState) => {
     setTable(prevState)
   }
+
+  const handleCheckboxChange = (index, value) => {
+    const updatedListaDeMarcadores = [...listaDeMarcadores];
+    updatedListaDeMarcadores[index].done = value;
+    setListaDeMarcadores(updatedListaDeMarcadores);
+  }
+  
+  const handleDelete = (index) => {
+    const updateItens = [...listaDeMarcadores]
+    updateItens.splice(index,1)
+    setListaDeMarcadores(updateItens)
+  }
+
+  
+    const countDone = listaDeMarcadores.filter(item => item.done).length
+  
 
   return (
     <>
@@ -26,17 +43,17 @@ function App() {
 
       <PaiContainer>
         <Tarefas>
-          <h2>Tarefas criadas <span>{table}</span></h2>
-          <h3>Concluídas <span>0</span> </h3>
+          <h2>Tarefas criadas <span>{listaDeMarcadores.length}</span></h2>
+          <h3>Concluídas <span>{countDone}</span> </h3>
         </Tarefas>
         {listaDeMarcadores.length ? (
           listaDeMarcadores.map((lista, index) => (
             <>
               <Array key={index}>
                 <Nova>
-                  <RadioImage checked={checked}/>
-                  <p>{lista.texto}</p>
-                  <img src={LixeiraImage} id="lixeira_img" />
+                  <RadioImage radio={lista.done} setRadio={(value) => handleCheckboxChange(index,value)}/>
+                  <p className={lista.done? 'checked' : ''}>{lista.texto}</p>
+                  <img src={LixeiraImage} id="lixeira_img" onClick={() => handleDelete(index)}/>
                 </Nova>
               </Array>
             </>
