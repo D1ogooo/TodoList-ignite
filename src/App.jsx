@@ -27,9 +27,7 @@ function App() {
     setListaDeMarcadores(updateItens)
   }
 
-  
-    const countDone = listaDeMarcadores.filter(item => item.done).length
-  
+  const countDone = listaDeMarcadores.filter(item => item.done).length
 
   return (
     <>
@@ -44,7 +42,7 @@ function App() {
       <PaiContainer>
         <Tarefas>
           <h2>Tarefas criadas <span>{listaDeMarcadores.length}</span></h2>
-          <h3>Concluídas <span>{countDone}</span> </h3>
+          <h3>Concluídas <span>{countDone} de {listaDeMarcadores.length}</span> </h3>
         </Tarefas>
         {listaDeMarcadores.length ? (
           listaDeMarcadores.map((lista, index) => (
