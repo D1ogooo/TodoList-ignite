@@ -6,8 +6,4 @@ export const ImageCustom = styled.div`
  height: 24px;
  cursor: pointer;
  }
-
- p {
-    
- }
 `
