@@ -10,7 +10,6 @@ export function Search({ setListaDeMarcadores, onTableChange }) {
     if (InputTarefa.current) {
      setTabelas(() => tabelas+1)
 
-     console.log(tabelas)
       let NovaTarefa = {
        texto: `${InputTarefa.current.value}`,
        done: false,
